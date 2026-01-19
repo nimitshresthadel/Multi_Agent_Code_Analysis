@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    container_name: sample_postgres_db
+    environment:
+      POSTGRES_USER: sampleuser
+      POSTGRES_PASSWORD: samplepass
+      POSTGRES_DB: sampledb
+    ports:
+      - "5430:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
